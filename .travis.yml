@@ -30,4 +30,4 @@ after_install:
   - docker ps -a
 
 after_success:
-  - node trigger-repo2-build.js_
+  - node trigger-repo2-build.js
