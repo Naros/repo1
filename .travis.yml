@@ -15,6 +15,7 @@ git:
   quiet: true
 
 before_install:
+  - npm install travis-ci
   - docker -v
   - docker ps -a
   - wget https://archive.apache.org/dist/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.zip
