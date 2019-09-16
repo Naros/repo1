@@ -1,0 +1,30 @@
+language: java
+cache:
+  directories:
+    - $HOME/.m2/repository
+
+sudo: required
+
+jdk:
+  - oraclejdk8
+
+services:
+  - docker
+
+git:
+  quiet: true
+
+before_install:
+  - docker -v
+  - docker ps -a
+  - wget https://archive.apache.org/dist/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.zip
+  - unzip -qq apache-maven-3.3.9-bin.zip
+  - export M2_HOME=$PWD/apache-maven-3.3.9
+  - export PATH=$M2_HOME/bin:$PATH
+  - mvn -version
+
+install: true
+
+after_install:
+  - docker ps -a
+  
