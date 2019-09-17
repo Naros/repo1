@@ -1,9 +1,6 @@
 name: Repo2 Trigger
 
-on:
-  push:
-    paths:
-      - 'documentation/*'
+on: [push]
 
 jobs:
   build:
