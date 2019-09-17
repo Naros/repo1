@@ -7,4 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger website rebuild
-        run: curl --version
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: curl -X POST "Accept application/vnd.github.everest-preview+json" -H "Content-Type: application/json" -H "Authorization: token $GITHUB_TOKEN" https://api.github.com/repos/Naros/repo2/dispatches --data '{"event_type": "documentation-update"}'
