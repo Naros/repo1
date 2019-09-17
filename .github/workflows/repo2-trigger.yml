@@ -10,4 +10,4 @@ jobs:
       - name: Trigger website rebuild
         run: ./.github/scripts/build_website.sh
         env:
-          REPO2_BUILD: $
+          REPO2_BUILD: ${{ secrets.REPO2_BUILD }}
