@@ -9,3 +9,5 @@ jobs:
       - uses: actions/checkout@v1
       - name: Trigger website rebuild
         run: ./.github/scripts/build_website.sh
+        env:
+          REPO2_BUILD: $
